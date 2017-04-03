@@ -18,10 +18,10 @@ module.exports = {
 	module: {
 		loaders: [
 			{
-				test: '\.css$',
+				test: /\.css$/,
 				loader: 'style-loader!css-loader'
 			}, {
-				test: '\.js$',
+				test: /\.js$/,
 				exclude: /node_modules/,
 				loader: 'babel-loader?presets[]=es2015-loose&cacheDirectory&plugins[]=transform-runtime'
 			}

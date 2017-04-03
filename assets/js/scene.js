@@ -4,5 +4,8 @@ var THREE = require('n3d-threejs')
 
 var scene;
 module.exports = function() {
-	scene = new THREE.Scene();
+	return new Promise((resolve, reject) => {
+		scene = new THREE.Scene();
+		resolve(scene);
+	})
 }

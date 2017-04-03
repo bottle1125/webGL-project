@@ -21,7 +21,7 @@ Camera.prototype.init = function(options, callback) {
 	var aspect = options.aspect;
 	var near = options.near;
 	var far = options.far;
-	camera = new THREE.Perspective(fov, aspect, near, far);
+	camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
 	camera.position.x = 0;
 	camera.position.y = 1000;
 	camera.position.z = 0;
@@ -36,10 +36,10 @@ Camera.prototype.init = function(options, callback) {
 	callback(camera);
 }
 
-module.exports = function() {
+module.exports = function(params) {
 	var initCamera = new Camera();
 	return new Promise(function(resolve, reject) {
-		initCamera.init(function(camera) {
+		initCamera.init(params, function(camera) {
 			resolve(camera);
 		})
 	})

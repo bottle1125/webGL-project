@@ -1,3 +1,6 @@
-var test = require('./assets/js/test.js');
+require('./assets/css/index.css')
+var render = require('./assets/js/render.js')
 
-test();
+render().then(() => {
+	console.log('success!');
+})
