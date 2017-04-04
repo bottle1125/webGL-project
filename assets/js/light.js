@@ -9,7 +9,7 @@ function Light() {
 
 Light.prototype.init = function(callback) {
 	var light = new THREE.DirectionalLight(0xFF000, 1.0, 0);
-	light.position.set(100,100,200);
+	light.position.set(0,0,1);
 	callback(light);
 }
 

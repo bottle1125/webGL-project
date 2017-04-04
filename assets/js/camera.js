@@ -17,22 +17,13 @@ function Camera() {
 }
 
 Camera.prototype.init = function(options, callback) {
-	var fov = options.fov;
-	var aspect = options.aspect;
-	var near = options.near;
-	var far = options.far;
+	var fov = options.perspective.fov;
+	var aspect = options.perspective.aspect;
+	var near = options.perspective.near;
+	var far = options.perspective.far;
 	camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
-	camera.position.x = 0;
-	camera.position.y = 1000;
-	camera.position.z = 0;
-	camera.up.x = 0;
-	camera.up.y = 0;
-	camera.up.z = 1;
-	camera.lookAt({
-		x : 0,
-		y : 0,
-		z : 0
-	});
+	camera.position.set(options.position.x, options.position.y, options.position.z);
+	camera.lookAt(new THREE.Vector3(options.lookAt.x, options.lookAt.y, options.lookAt.z));
 	callback(camera);
 }
 

@@ -24,6 +24,9 @@ module.exports = {
 				test: /\.js$/,
 				exclude: /node_modules/,
 				loader: 'babel-loader?presets[]=es2015-loose&cacheDirectory&plugins[]=transform-runtime'
+			}, {
+				test: /\.(png|jpg)$/,
+				loader: 'url-loader?limit=8192'
 			}
 		]
 	},
