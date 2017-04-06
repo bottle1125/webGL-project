@@ -1,6 +1,4 @@
 require('./assets/css/index.css')
-var render = require('./assets/js/render.js')
+var Page = require('./assets/js/main.js')
 
-render().then(() => {
-	console.log('success!');
-})
+new Page()

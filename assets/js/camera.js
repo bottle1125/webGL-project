@@ -22,16 +22,15 @@ Camera.prototype.init = function(options, callback) {
 	var near = options.perspective.near;
 	var far = options.perspective.far;
 	camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
-	camera.position.set(options.position.x, options.position.y, options.position.z);
-	camera.lookAt(new THREE.Vector3(options.lookAt.x, options.lookAt.y, options.lookAt.z));
+	camera.position.set(-250, 210, 410);
+	// camera.lookAt(new THREE.Vector3(options.lookAt.x, options.lookAt.y, options.lookAt.z));
+	camera.lookAt({
+		x: 0,
+		y: 0,
+		z: 0
+	});
+	camera.up.set(0, 1, 0)
 	callback(camera);
 }
 
-module.exports = function(params) {
-	var initCamera = new Camera();
-	return new Promise(function(resolve, reject) {
-		initCamera.init(params, function(camera) {
-			resolve(camera);
-		})
-	})
-}
+module.exports = Camera;
