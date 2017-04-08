@@ -13,35 +13,22 @@ var objects = [{
 }, {
 	name: '墙面',
 	type: 'cube',
-	size: [430, 150, 10],
-	position: [45, 0, 300],
-	material: [{'color': 0x9cb2d1 }, {'color': 0xafc0ca}, {'color': 0xd6e4ec}, {'color': 0x9cb2d1}, {'color': 0x9cb2d1}, {'color': 0x9cb2d1}]
-}, {
-	name: '墙面',
-	type: 'cube',
-	size: [600, 150, 10],
-	position: [250, 0, 0],
-	translate: 0.5*Math.PI,
-	material: [{'color': 0x9cb2d1 }, {'color': 0xafc0ca}, {'color': 0xd6e4ec}, {'color': 0x9cb2d1}, {'color': 0x9cb2d1}, {'color': 0x9cb2d1}]
-}, {
-	name: '墙面',
-	type: 'cube',
 	size: [500, 150, 10],
-	position: [-250, 0, -50],
-	translate: 0.5 * Math.PI,
+	position: [0, 0, 300],
 	material: [{'color': 0x9cb2d1 }, {'color': 0xafc0ca}, {'color': 0xd6e4ec}, {'color': 0x9cb2d1}, {'color': 0x9cb2d1}, {'color': 0x9cb2d1}]
 }, {
 	name: '墙面',
 	type: 'cube',
-	size: [80, 150, 10],
-	position: [-215, 0, 200],
-	material: [{'color': 0x9cb2d1 }, {'color': 0xafc0ca}, {'color': 0xd6e4ec}, {'color': 0x9cb2d1}, {'color': 0x9cb2d1}, {'color': 0x9cb2d1}]
-}, {
-	name: '墙面',
-	type: 'cube',
-	size: [110, 150, 10],
-	position: [-170, 0, 250],
+	size: [610, 150, 10],
+	position: [255, 0, 0],
 	translate: 0.5*Math.PI,
+	material: [{'color': 0x9cb2d1 }, {'color': 0xafc0ca}, {'color': 0xd6e4ec}, {'color': 0x9cb2d1}, {'color': 0x9cb2d1}, {'color': 0x9cb2d1}]
+}, {
+	name: '墙面',
+	type: 'cube',
+	size: [610, 150, 10],
+	position: [-250, 0, 0],
+	translate: 0.5 * Math.PI,
 	material: [{'color': 0x9cb2d1 }, {'color': 0xafc0ca}, {'color': 0xd6e4ec}, {'color': 0x9cb2d1}, {'color': 0x9cb2d1}, {'color': 0x9cb2d1}]
 }, {
 	name: '墙体挖洞',
@@ -64,6 +51,51 @@ var objects = [{
 	position: [-96, -30, -300],
 	translate: 1*Math.PI,
 	material: [{'color': '#ffff00' }, {'color': 0xafc0ca}, {'color': 0xd6e4ec}, {'color': 0x9cb2d1}, {'image': door, 'repeat': false}, {'image': door, 'repeat': false}]
+}, {
+	name: '客厅分隔墙',
+	type: 'cube',
+	size: [220, 150, 10],
+	position: [140, 0, -80],
+	material: [{'color': 0x9cb2d1 }, {'color': 0xafc0ca}, {'color': 0xd6e4ec}, {'color': 0x9cb2d1}, {'color': 0x9cb2d1}, {'color': 0x9cb2d1}]
+}, {
+	name: '厨房分隔墙',
+	type: 'cube',
+	size: [200, 150, 10],
+	position: [-140, 0, -90],
+	translate: 0.5 * Math.PI,
+	material: [{'color': 0x9cb2d1 }, {'color': 0xafc0ca}, {'color': 0xd6e4ec}, {'color': 0x9cb2d1}, {'color': 0x9cb2d1}, {'color': 0x9cb2d1}]
+}, {
+	name: '次卧分隔墙',
+	type: 'cube',
+	size: [200, 150, 10],
+	position: [-145, 0, 10],
+	material: [{'color': 0x9cb2d1 }, {'color': 0xafc0ca}, {'color': 0xd6e4ec}, {'color': 0x9cb2d1}, {'color': 0x9cb2d1}, {'color': 0x9cb2d1}]
+}, {
+	name: '书房分隔墙',
+	type: 'cube',
+	size: [220, 150, 10],
+	position: [140, 0, 80],
+	material: [{'color': 0x9cb2d1 }, {'color': 0xafc0ca}, {'color': 0xd6e4ec}, {'color': 0x9cb2d1}, {'color': 0x9cb2d1}, {'color': 0x9cb2d1}]
+}, {
+	name: '走廊分隔墙A',
+	type: 'cube',
+	size: [280, 150, 10],
+	position: [-50, 0, 155],
+	translate: 0.5*Math.PI,
+	material: [{'color': 0x9cb2d1 }, {'color': 0xafc0ca}, {'color': 0xd6e4ec}, {'color': 0x9cb2d1}, {'color': 0x9cb2d1}, {'color': 0x9cb2d1}]
+}, {
+	name: '洗手间分隔墙',
+	type: 'cube',
+	size: [200, 150, 10],
+	position: [-145, 0, 100],
+	material: [{'color': 0x9cb2d1 }, {'color': 0xafc0ca}, {'color': 0xd6e4ec}, {'color': 0x9cb2d1}, {'color': 0x9cb2d1}, {'color': 0x9cb2d1}]
+}, {
+	name: '走廊分隔墙B',
+	type: 'cube',
+	size: [382, 150, 10],
+	position: [32, 0, 105],
+	translate: 0.5*Math.PI,
+	material: [{'color': 0x9cb2d1 }, {'color': 0xafc0ca}, {'color': 0xd6e4ec}, {'color': 0x9cb2d1}, {'color': 0x9cb2d1}, {'color': 0x9cb2d1}]
 }]
 
 module.exports = objects;

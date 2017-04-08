@@ -27,7 +27,7 @@ Stuff.prototype = {
 				var accessoryShape = new THREE.Mesh(accessoryGeometry, accessoryMaterial);
 				var [aPositionX, aPositionY, aPositionZ] = object.accessory.position;
 				accessoryShape.position.set(aPositionX, aPositionY, aPositionZ);
-				console.log(accessoryShape)
+				accessoryShape.name = object.accessory.name;
 				self.subtract(shape, accessoryShape, function(result) {
 					callback(result);
 				});
@@ -52,7 +52,6 @@ Stuff.prototype = {
 			else if(val.image) {
 				materials.push(new THREE.MeshBasicMaterial({
 					map: new THREE.TextureLoader().load(val.image, function(texture) {
-						console.log(val.repeat)
 						if(val.repeat) {
 							texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
 							texture.repeat.set(30, 30);
