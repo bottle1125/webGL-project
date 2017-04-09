@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rimraf dist && webpack --progress --colors",
-    "dev": "node_modules/.bin/webpack-dev-server --progress"
+    "dev": "node_modules/.bin/webpack-dev-server --port 3000 --progress"
   },
   "author": "dongmei",
   "license": "ISC",

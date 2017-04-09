@@ -7,7 +7,7 @@ var Renderer = require('./render.js');
 var Camera = require('./camera.js');
 var Stuff = require('./models/objectModel.js');
 var objectList = require('./models/objectList.js');
-var initLight = require('./light.js')
+var Light = require('./light.js')
 
 var renderer;
 
@@ -31,11 +31,16 @@ Page.prototype = {
 		this.scene.add(this.camera);
 		// 初始化渲染器
 		this.initRenderer(canvasFrame, width, height);
-	
+		// 初始化光线
+		this.initLight(this.scene);
 		// create cube
 		this.createCube();
 		// render
 		this.render();
+	},
+	initLight: function(scene) {
+		var light = new Light();
+		light.init(scene)
 	},
 	initRenderer: function(canvasFrame, cWidth, cHeight) {
 		var self = this;
