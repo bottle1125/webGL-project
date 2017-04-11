@@ -12,7 +12,8 @@
   "license": "ISC",
   "dependencies": {
     "n3d-threejs": "^76.0.0",
-    "three-js-csg": "^72.0.0"
+    "three-js-csg": "^72.0.0",
+    "three-obj-loader": "^1.0.2"
   },
   "devDependencies": {
     "babel": "^6.23.0",

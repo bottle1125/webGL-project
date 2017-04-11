@@ -19,6 +19,9 @@ Stuff.prototype = {
 			shape.name = object.name;
 			var [positionX, positionY, positionZ] = object.position;
 			shape.position.set(positionX, positionY, positionZ);
+			if(object.status) {
+				shape.status = object.status;
+			}
 			if(object.rotation) {
 				[shape.rotation.x, shape.rotation.y, shape.rotation.z] = object.rotation;
 			}

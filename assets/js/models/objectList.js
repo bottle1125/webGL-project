@@ -9,7 +9,7 @@ var door2 = require('../../img/door2.jpg')
 var frame = require('../../img/frame-door2.jpg')
 
 var objects = [{
-	name: '地板',
+	name: 'floor',
 	type: 'cube',
 	size: [700, 5, 800],
 	position: [0, -80, 0],
@@ -33,7 +33,7 @@ var objects = [{
         }
 	}
 }, {
-	name: '墙面',
+	name: 'wallA',
 	type: 'cube',
 	size: [500, 150, 10],
 	position: [0, 0, 300],
@@ -100,7 +100,7 @@ var objects = [{
 		}
 	}
 }, {
-	name: '墙面',
+	name: 'wallB',
 	type: 'cube',
 	size: [610, 150, 10],
 	position: [255, 0, 0],
@@ -217,11 +217,12 @@ var objects = [{
 		}
 	}]
 }, {
-	name: '客厅推拉门A',
+	name: 'living-room-doorB',
 	type: 'cube',
 	size: [32, 128, 2],
 	position: [255, -10, -162],
 	rotation: [0, 0.5*Math.PI, 0],
+	status: 'close',
 	style: {
 		surfaceColor: 0x7e1414,
 		surface: {
@@ -244,11 +245,12 @@ var objects = [{
 		}
 	}
 }, {
-	name: '客厅推拉门B',
+	name: 'living-room-doorC',
 	type: 'cube',
 	size: [32, 128, 2],
 	position: [255, -10, -195],
 	rotation: [0, 0.5*Math.PI, 0],
+	status: 'close',
 	style: {
 		surfaceColor: 0x7e1414,
 		surface: {
@@ -271,11 +273,12 @@ var objects = [{
 		}
 	}
 }, {
-	name: '客厅推拉门C',
+	name: 'living-room-doorA',
 	type: 'cube',
 	size: [32, 128, 2],
 	position: [255, -10, -133],
 	rotation: [0, 0.5*Math.PI, 0],
+	status: 'close',
 	style: {
 		surfaceColor: 0x7e1414,
 		surface: {
@@ -298,11 +301,12 @@ var objects = [{
 		}
 	}
 }, {
-	name: '客厅推拉门D',
+	name: 'living-room-doorD',
 	type: 'cube',
 	size: [32, 128, 2],
-	position: [255, -12, -225],
+	position: [255, -10, -225],
 	rotation: [0, 0.5*Math.PI, 0],
+	status: 'close',
 	style: {
 		surfaceColor: 0x7e1414,
 		surface: {
@@ -325,11 +329,12 @@ var objects = [{
 		}
 	}
 }, {
-	name: '主卧推拉门A',
+	name: 'master-bedroom-doorA',
 	type: 'cube',
 	size: [32, 128, 2],
 	position: [255, -12, 227],
 	rotation: [0, 0.5*Math.PI, 0],
+	status: 'close',
 	style: {
 		surfaceColor: 0x7e1414,
 		surface: {
@@ -352,11 +357,12 @@ var objects = [{
 		}
 	}
 }, {
-	name: '主卧推拉门B',
+	name: 'master-bedroom-doorB',
 	type: 'cube',
 	size: [32, 128, 2],
 	position: [255, -12, 193],
 	rotation: [0, 0.5*Math.PI, 0],
+	status: 'close',
 	style: {
 		surfaceColor: 0x7e1414,
 		surface: {
@@ -379,11 +385,12 @@ var objects = [{
 		}
 	}
 }, {
-	name: '主卧推拉门C',
+	name: 'master-bedroom-doorC',
 	type: 'cube',
 	size: [32, 128, 2],
 	position: [255, -12, 163],
 	rotation: [0, 0.5*Math.PI, 0],
+	status: 'close',
 	style: {
 		surfaceColor: 0x7e1414,
 		surface: {
@@ -406,11 +413,12 @@ var objects = [{
 		}
 	}
 }, {
-	name: '主卧推拉门D',
+	name: 'master-bedroom-doorD',
 	type: 'cube',
 	size: [32, 128, 2],
 	position: [255, -12, 133],
 	rotation: [0, 0.5*Math.PI, 0],
+	status: 'close',
 	style: {
 		surfaceColor: 0x7e1414,
 		surface: {
@@ -433,11 +441,12 @@ var objects = [{
 		}
 	}
 }, {
-	name: '书房-窗户A',
+	name: 'study-windowA',
 	type: 'cube',
 	size: [32, 64, 2],
-	position: [255, 30, 15],
+	position: [255, 30, 10],
 	rotation: [0, 0.5*Math.PI, 0],
+	status: 'open',
 	style: {
 		surfaceColor: 0x9cb2d1,
 		surface: {
@@ -452,11 +461,12 @@ var objects = [{
 		}
 	}
 }, {
-	name: '书房-窗户B',
+	name: 'study-windowB',
 	type: 'cube',
 	size: [32, 64, 2],
 	position: [255, 30, -5],
 	rotation: [0, 0.5*Math.PI, 0],
+	status: 'open',
 	style: {
 		surfaceColor: 0x9cb2d1,
 		surface: {
@@ -471,7 +481,7 @@ var objects = [{
 		}
 	}
 }, {
-	name: '墙面',
+	name: 'wallC',
 	type: 'cube',
 	size: [610, 150, 10],
 	position: [-250, 0, 0],
@@ -588,7 +598,7 @@ var objects = [{
 		}
 	}]
 }, {
-	name: '厨房-窗户A',
+	name: 'kitchen-windowA',
 	type: 'cube',
 	size: [32, 64, 2],
 	position: [-253, 30, -100],
@@ -607,7 +617,7 @@ var objects = [{
 		}
 	}
 }, {
-	name: '厨房-窗户B',
+	name: 'kitchen-windowB',
 	type: 'cube',
 	size: [32, 64, 2],
 	position: [-253, 30, -85],
@@ -626,11 +636,12 @@ var objects = [{
 		}
 	}
 }, {
-	name: '外厕-窗户A',
+	name: 'toilets-window',
 	type: 'cube',
 	size: [32, 64, 2],
 	position: [-253, 30, 60],
 	rotation: [0, 0.5*Math.PI, 0],
+	status: 'close',
 	style: {
 		surfaceColor: 0x9cb2d1,
 		surface: {
@@ -645,7 +656,7 @@ var objects = [{
 		}
 	}
 }, {
-	name: '次卧-窗户A',
+	name: 'second-bedroom-windowA',
 	type: 'cube',
 	size: [32, 64, 2],
 	position: [-253, 30, 190],
@@ -664,7 +675,7 @@ var objects = [{
 		}
 	}
 }, {
-	name: '次卧-窗户B',
+	name: 'second-bedroom-windowB',
 	type: 'cube',
 	size: [32, 64, 2],
 	position: [-253, 30, 210],
@@ -732,7 +743,7 @@ var objects = [{
 	    }
 	}],
 }, {
-	name: 'door',
+	name: 'main-door',
 	type: 'cube',
 	size: [50, 80, 10],
 	position: [-95, -32, -300],
@@ -758,7 +769,7 @@ var objects = [{
 	    },
 	}
 }, {
-	name: '客厅分隔墙',
+	name: 'partition-wallA',
 	type: 'cube',
 	size: [220, 150, 10],
 	position: [140, 0, -80],
@@ -774,7 +785,7 @@ var objects = [{
         }
 	},
 }, {
-	name: '厨房分隔墙',
+	name: 'bar',
 	type: 'cube',
 	size: [200, 5, 25],
 	position: [-140, 40, -90],
@@ -809,11 +820,10 @@ var objects = [{
         }
 	},
 }, {
-	name: '吧台桌腿A',
+	name: 'bar-legA',
 	type: 'cube',
 	size: [5, 120, 5],
 	position: [-150, -20, -185],
-	// rotation: [0.05*Math.PI, 0, 0],
 	style: {
 		surfaceColor: 0x9cb2d1,
 		surface: {
@@ -840,11 +850,10 @@ var objects = [{
 		}
 	}
 }, {
-	name: '吧台桌腿B',
+	name: 'bar-legB',
 	type: 'cube',
 	size: [5, 120, 5],
 	position: [-135, -20, -185],
-	// rotation: [0, 0, 0],
 	style: {
 		surfaceColor: 0x9cb2d1,
 		surface: {
@@ -871,7 +880,7 @@ var objects = [{
 		}
 	}
 }, {
-	name: '次卧分隔墙',
+	name: 'partition-wallB',
 	type: 'cube',
 	size: [200, 150, 10],
 	position: [-145, 0, 10],
@@ -887,7 +896,7 @@ var objects = [{
         }
 	}
 }, {
-	name: '书房分隔墙',
+	name: 'partition-wallC',
 	type: 'cube',
 	size: [220, 150, 10],
 	position: [140, 0, 80],
@@ -902,9 +911,8 @@ var objects = [{
             }
         }
 	},
-
 }, {
-	name: '走廊分隔墙A',
+	name: 'partition-wallD',
 	type: 'cube',
 	size: [280, 150, 10],
 	position: [-50, 0, 155],
@@ -987,9 +995,8 @@ var objects = [{
 		    },
 	    }
 	},],
-},
- {
-	name: '门',
+}, {
+	name: 'second-bedroom-doorA',
 	type: 'cube',
 	size: [2, 100, 32],
 	position: [-50, -25, 150],
@@ -1007,7 +1014,7 @@ var objects = [{
 		}
 	}
 }, {
-	name: '门',
+	name: 'second-bedroom-doorB',
 	type: 'cube',
 	size: [2, 100, 32],
 	position: [-50, -25, 60],
@@ -1026,7 +1033,7 @@ var objects = [{
 	}
 }, 
 {
-	name: '走廊分隔墙B',
+	name: 'partition-wallE',
 	type: 'cube',
 	size: [380, 150, 10],
 	position: [25, 0, 105],
@@ -1110,25 +1117,7 @@ var objects = [{
 	    }
 	}],
 }, {
-	name: '门',
-	type: 'cube',
-	size: [2, 100, 32],
-	position: [25, 0, 105],
-	style: {
-		surfaceColor: 0x9cb2d1,
-		surface: {
-			surface_fore: {
-				surfaceColor: 0x9cb2d1,
-				imgurl: door2
-			},
-			surface_behind: {
-				surfaceColor: 0x9cb2d1,
-				imgurl: door2
-			}
-		}
-	}
-}, {
-	name: '门',
+	name: 'study-door',
 	type: 'cube',
 	size: [2, 100, 32],
 	position: [25, -25, 30],
@@ -1146,7 +1135,7 @@ var objects = [{
 		}
 	}
 }, {
-	name: '门',
+	name: 'living-room-door',
 	type: 'cube',
 	size: [2, 100, 32],
 	position: [25, -25, 130],
@@ -1164,7 +1153,7 @@ var objects = [{
 		}
 	}
 },{
-	name: '洗手间分隔墙',
+	name: 'partition-wallF',
 	type: 'cube',
 	size: [190, 150, 10],
 	position: [-150, 0, 100],
@@ -1180,7 +1169,7 @@ var objects = [{
         }
 	},
 }, {
-	name: '主卧厕分隔墙A',
+	name: 'partition-wallG',
 	type: 'cube',
 	size: [140, 150, 10],
 	position: [100, 0, 225],
@@ -1195,10 +1184,9 @@ var objects = [{
                 surfaceColor: 0xd6e4ec,
             }
         }
-	},
-	
+	}
 }, {
-	name: '主卧厕分隔墙B',
+	name: 'partition-wallH',
 	type: 'cube',
 	size: [66, 150, 10],
 	position: [62, 0, 160],
@@ -1247,7 +1235,7 @@ var objects = [{
 	    }
 	}]
 },{
-	name: '门',
+	name: 'living-room-toilet-door',
 	type: 'cube',
 	size: [32, 100, 2],
 	position: [62, -25, 160],
