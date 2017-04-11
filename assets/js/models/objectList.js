@@ -3,6 +3,10 @@
 var THREE = require('n3d-threejs')
 var floor = require('../../img/floor.jpg')
 var door = require('../../img/doorL.jpg')
+var desk = require('../../img/desk.jpg')
+var windowImg = require('../../img/windowL.jpg')
+var door2 = require('../../img/door2.jpg')
+var frame = require('../../img/frame-door2.jpg')
 
 var objects = [{
 	name: '地板',
@@ -43,13 +47,64 @@ var objects = [{
                 surfaceColor: 0xd6e4ec,
             }
         }
+	},
+	childrens:[{
+		op: '-',
+	    show: true,
+	    uuid: "",
+	    name: 'windowhole',
+	    type: 'cube',
+	    objType: 'windowhole',
+	    size: [32, 64, 10],
+	    position: [60, 30, 300],
+	    style: {
+	    	surfaceColor: 0x9cb2d1,
+		    surface: {
+		        surface_up: {
+		            skinColor: 0x9cb2d1,
+		        },
+		        surface_down: {
+		            skinColor: 0x9cb2d1,
+		        },
+		        surface_fore: {
+		            skinColor: 0x9cb2d1,
+	            },
+		        surface_behind: {
+		            skinColor: 0x9cb2d1,
+		        },
+		        surface_left: {
+		            skinColor: 0xffdddd,
+		        },
+		        surface_right: {
+		            skinColor: 0x9cb2d1,
+		        }
+		    },
+		}
+	}]
+}, {
+	name: '主卧厕-窗户',
+	type: 'cube',
+	size: [32, 64, 2],
+	position: [60, 30, 300],
+	style: {
+		surfaceColor: 0x9cb2d1,
+		surface: {
+			surface_right: {
+				surfaceColor: 0x9cb2d1,
+				imgurl: windowImg
+			},
+			surface_left: {
+				surfaceColor: 0x9cb2d1,
+				imgurl: windowImg
+			}
+		}
 	}
 }, {
 	name: '墙面',
 	type: 'cube',
 	size: [610, 150, 10],
 	position: [255, 0, 0],
-	translate: 0.5*Math.PI,
+	rotation: [0, 0.5*Math.PI, 0],
 	style: {
 		surfaceColor: 0x9cb2d1,
 		surface: {
@@ -60,13 +115,367 @@ var objects = [{
                 surfaceColor: 0xd6e4ec,
             }
         }
+	},
+	childrens: [{
+		op: '-',
+	    show: true,
+	    uuid: "",
+	    name: 'windowhole',
+	    type: 'cube',
+	    objType: 'windowhole',
+	    size: [64, 64, 10],
+	    position: [255, 30, 0],
+	    rotation: [0, 0.5*Math.PI, 0],
+	    style: {
+	    	surfaceColor: 0x9cb2d1,
+		    surface: {
+		        surface_up: {
+		            skinColor: 0x9cb2d1,
+		        },
+		        surface_down: {
+		            skinColor: 0x9cb2d1,
+		        },
+		        surface_fore: {
+		            skinColor: 0x9cb2d1,
+	            },
+		        surface_behind: {
+		            skinColor: 0x9cb2d1,
+		        },
+		        surface_left: {
+		            skinColor: 0xffdddd,
+		        },
+		        surface_right: {
+		            skinColor: 0x9cb2d1,
+		        }
+		    },
+		}
+	}, {
+		op: '-',
+	    show: true,
+	    uuid: "",
+	    name: 'windowhole',
+	    type: 'cube',
+	    objType: 'windowhole',
+	    size: [128, 128, 10],
+	    position: [255, -10, -180],
+	    rotation: [0, 0.5*Math.PI, 0],
+	    style: {
+	    	surfaceColor: 0x9cb2d1,
+		    surface: {
+		        surface_up: {
+		            skinColor: 0x9cb2d1,
+		        },
+		        surface_down: {
+		            skinColor: 0x9cb2d1,
+		        },
+		        surface_fore: {
+		            skinColor: 0x9cb2d1,
+	            },
+		        surface_behind: {
+		            skinColor: 0x9cb2d1,
+		        },
+		        surface_left: {
+		            skinColor: 0xffdddd,
+		        },
+		        surface_right: {
+		            skinColor: 0x9cb2d1,
+		        }
+		    },
+		}
+	}, {
+		op: '-',
+	    show: true,
+	    uuid: "",
+	    name: 'windowhole',
+	    type: 'cube',
+	    objType: 'windowhole',
+	    size: [128, 128, 10],
+	    position: [255, -10, 180],
+	    rotation: [0, 0.5*Math.PI, 0],
+	    style: {
+	    	surfaceColor: 0x9cb2d1,
+		    surface: {
+		        surface_up: {
+		            skinColor: 0x9cb2d1,
+		        },
+		        surface_down: {
+		            skinColor: 0x9cb2d1,
+		        },
+		        surface_fore: {
+		            skinColor: 0x9cb2d1,
+	            },
+		        surface_behind: {
+		            skinColor: 0x9cb2d1,
+		        },
+		        surface_left: {
+		            skinColor: 0xffdddd,
+		        },
+		        surface_right: {
+		            skinColor: 0x9cb2d1,
+		        }
+		    },
+		}
+	}]
+}, {
+	name: '客厅推拉门A',
+	type: 'cube',
+	size: [32, 128, 2],
+	position: [255, -10, -162],
+	rotation: [0, 0.5*Math.PI, 0],
+	style: {
+		surfaceColor: 0x7e1414,
+		surface: {
+			surface_right: {
+				surfaceColor: 0xffff00,
+				imgurl: frame,
+				repeatx: false,
+				repeaty: false,
+				transparent: true,
+				opacity: 0.5
+			},
+			surface_left: {
+				surfaceColor: 0xffff00,
+				imgurl: frame,
+				repeatx: false,
+				repeaty: false,
+				transparent: true,
+				opacity: 0.5
+			},
+		}
+	}
+}, {
+	name: '客厅推拉门B',
+	type: 'cube',
+	size: [32, 128, 2],
+	position: [255, -10, -195],
+	rotation: [0, 0.5*Math.PI, 0],
+	style: {
+		surfaceColor: 0x7e1414,
+		surface: {
+			surface_right: {
+				surfaceColor: 0xffff00,
+				imgurl: frame,
+				repeatx: false,
+				repeaty: false,
+				transparent: true,
+				opacity: 0.5
+			},
+			surface_left: {
+				surfaceColor: 0xffff00,
+				imgurl: frame,
+				repeatx: false,
+				repeaty: false,
+				transparent: true,
+				opacity: 0.5
+			},
+		}
+	}
+}, {
+	name: '客厅推拉门C',
+	type: 'cube',
+	size: [32, 128, 2],
+	position: [255, -10, -133],
+	rotation: [0, 0.5*Math.PI, 0],
+	style: {
+		surfaceColor: 0x7e1414,
+		surface: {
+			surface_right: {
+				surfaceColor: 0xffff00,
+				imgurl: frame,
+				repeatx: false,
+				repeaty: false,
+				transparent: true,
+				opacity: 0.5
+			},
+			surface_left: {
+				surfaceColor: 0xffff00,
+				imgurl: frame,
+				repeatx: false,
+				repeaty: false,
+				transparent: true,
+				opacity: 0.5
+			},
+		}
+	}
+}, {
+	name: '客厅推拉门D',
+	type: 'cube',
+	size: [32, 128, 2],
+	position: [255, -12, -225],
+	rotation: [0, 0.5*Math.PI, 0],
+	style: {
+		surfaceColor: 0x7e1414,
+		surface: {
+			surface_right: {
+				surfaceColor: 0xffff00,
+				imgurl: frame,
+				repeatx: false,
+				repeaty: false,
+				transparent: true,
+				opacity: 0.5
+			},
+			surface_left: {
+				surfaceColor: 0xffff00,
+				imgurl: frame,
+				repeatx: false,
+				repeaty: false,
+				transparent: true,
+				opacity: 0.5
+			},
+		}
+	}
+}, {
+	name: '主卧推拉门A',
+	type: 'cube',
+	size: [32, 128, 2],
+	position: [255, -12, 227],
+	rotation: [0, 0.5*Math.PI, 0],
+	style: {
+		surfaceColor: 0x7e1414,
+		surface: {
+			surface_right: {
+				surfaceColor: 0xffff00,
+				imgurl: frame,
+				repeatx: false,
+				repeaty: false,
+				transparent: true,
+				opacity: 0.5
+			},
+			surface_left: {
+				surfaceColor: 0xffff00,
+				imgurl: frame,
+				repeatx: false,
+				repeaty: false,
+				transparent: true,
+				opacity: 0.5
+			},
+		}
+	}
+}, {
+	name: '主卧推拉门B',
+	type: 'cube',
+	size: [32, 128, 2],
+	position: [255, -12, 193],
+	rotation: [0, 0.5*Math.PI, 0],
+	style: {
+		surfaceColor: 0x7e1414,
+		surface: {
+			surface_right: {
+				surfaceColor: 0xffff00,
+				imgurl: frame,
+				repeatx: false,
+				repeaty: false,
+				transparent: true,
+				opacity: 0.5
+			},
+			surface_left: {
+				surfaceColor: 0xffff00,
+				imgurl: frame,
+				repeatx: false,
+				repeaty: false,
+				transparent: true,
+				opacity: 0.5
+			},
+		}
+	}
+}, {
+	name: '主卧推拉门C',
+	type: 'cube',
+	size: [32, 128, 2],
+	position: [255, -12, 163],
+	rotation: [0, 0.5*Math.PI, 0],
+	style: {
+		surfaceColor: 0x7e1414,
+		surface: {
+			surface_right: {
+				surfaceColor: 0xffff00,
+				imgurl: frame,
+				repeatx: false,
+				repeaty: false,
+				transparent: true,
+				opacity: 0.5
+			},
+			surface_left: {
+				surfaceColor: 0xffff00,
+				imgurl: frame,
+				repeatx: false,
+				repeaty: false,
+				transparent: true,
+				opacity: 0.5
+			},
+		}
+	}
+}, {
+	name: '主卧推拉门D',
+	type: 'cube',
+	size: [32, 128, 2],
+	position: [255, -12, 133],
+	rotation: [0, 0.5*Math.PI, 0],
+	style: {
+		surfaceColor: 0x7e1414,
+		surface: {
+			surface_right: {
+				surfaceColor: 0xffff00,
+				imgurl: frame,
+				repeatx: false,
+				repeaty: false,
+				transparent: true,
+				opacity: 0.5
+			},
+			surface_left: {
+				surfaceColor: 0xffff00,
+				imgurl: frame,
+				repeatx: false,
+				repeaty: false,
+				transparent: true,
+				opacity: 0.5
+			},
+		}
+	}
+}, {
+	name: '书房-窗户A',
+	type: 'cube',
+	size: [32, 64, 2],
+	position: [255, 30, 15],
+	rotation: [0, 0.5*Math.PI, 0],
+	style: {
+		surfaceColor: 0x9cb2d1,
+		surface: {
+			surface_right: {
+				surfaceColor: 0x9cb2d1,
+				imgurl: windowImg
+			},
+			surface_left: {
+				surfaceColor: 0x9cb2d1,
+				imgurl: windowImg
+			}
+		}
+	}
+}, {
+	name: '书房-窗户B',
+	type: 'cube',
+	size: [32, 64, 2],
+	position: [255, 30, -5],
+	rotation: [0, 0.5*Math.PI, 0],
+	style: {
+		surfaceColor: 0x9cb2d1,
+		surface: {
+			surface_right: {
+				surfaceColor: 0x9cb2d1,
+				imgurl: windowImg
+			},
+			surface_left: {
+				surfaceColor: 0x9cb2d1,
+				imgurl: windowImg
+			}
+		}
 	}
 }, {
 	name: '墙面',
 	type: 'cube',
 	size: [610, 150, 10],
 	position: [-250, 0, 0],
-	translate: 0.5*Math.PI,
+	rotation: [0, 0.5*Math.PI, 0],
 	style: {
 		surfaceColor: 0x9cb2d1,
 		surface: {
@@ -77,6 +486,201 @@ var objects = [{
                 surfaceColor: 0xd6e4ec,
             }
         }
+	},
+	childrens: [{
+		op: '-',
+	    show: true,
+	    uuid: "",
+	    name: 'windowhole',
+	    type: 'cube',
+	    objType: 'windowhole',
+	    size: [64, 64, 10],
+	    position: [-250, 30, -100],
+	    rotation: [0, 0.5*Math.PI, 0],
+	    style: {
+	    	surfaceColor: 0x9cb2d1,
+		    surface: {
+		        surface_up: {
+		            skinColor: 0x9cb2d1,
+		        },
+		        surface_down: {
+		            skinColor: 0x9cb2d1,
+		        },
+		        surface_fore: {
+		            skinColor: 0x9cb2d1,
+	            },
+		        surface_behind: {
+		            skinColor: 0x9cb2d1,
+		        },
+		        surface_left: {
+		            skinColor: 0xffdddd,
+		        },
+		        surface_right: {
+		            skinColor: 0x9cb2d1,
+		        }
+		    },
+		}
+	}, {
+		op: '-',
+	    show: true,
+	    uuid: "",
+	    name: 'windowhole',
+	    type: 'cube',
+	    objType: 'windowhole',
+	    size: [32, 64, 10],
+	    position: [-250, 30, 60],
+	    rotation: [0, 0.5*Math.PI, 0],
+	    style: {
+	    	surfaceColor: 0x9cb2d1,
+		    surface: {
+		        surface_up: {
+		            skinColor: 0x9cb2d1,
+		        },
+		        surface_down: {
+		            skinColor: 0x9cb2d1,
+		        },
+		        surface_fore: {
+		            skinColor: 0x9cb2d1,
+	            },
+		        surface_behind: {
+		            skinColor: 0x9cb2d1,
+		        },
+		        surface_left: {
+		            skinColor: 0xffdddd,
+		        },
+		        surface_right: {
+		            skinColor: 0x9cb2d1,
+		        }
+		    },
+		}
+	}, {
+		op: '-',
+	    show: true,
+	    uuid: "",
+	    name: 'windowhole',
+	    type: 'cube',
+	    objType: 'windowhole',
+	    size: [64, 64, 10],
+	    position: [-250, 30, 200],
+	    rotation: [0, 0.5*Math.PI, 0],
+	    style: {
+	    	surfaceColor: 0x9cb2d1,
+		    surface: {
+		        surface_up: {
+		            skinColor: 0x9cb2d1,
+		        },
+		        surface_down: {
+		            skinColor: 0x9cb2d1,
+		        },
+		        surface_fore: {
+		            skinColor: 0x9cb2d1,
+	            },
+		        surface_behind: {
+		            skinColor: 0x9cb2d1,
+		        },
+		        surface_left: {
+		            skinColor: 0xffdddd,
+		        },
+		        surface_right: {
+		            skinColor: 0x9cb2d1,
+		        }
+		    },
+		}
+	}]
+}, {
+	name: '厨房-窗户A',
+	type: 'cube',
+	size: [32, 64, 2],
+	position: [-253, 30, -100],
+	rotation: [0, 0.5*Math.PI, 0],
+	style: {
+		surfaceColor: 0x9cb2d1,
+		surface: {
+			surface_right: {
+				surfaceColor: 0x9cb2d1,
+				imgurl: windowImg
+			},
+			surface_left: {
+				surfaceColor: 0x9cb2d1,
+				imgurl: windowImg
+			}
+		}
+	}
+}, {
+	name: '厨房-窗户B',
+	type: 'cube',
+	size: [32, 64, 2],
+	position: [-253, 30, -85],
+	rotation: [0, 0.5*Math.PI, 0],
+	style: {
+		surfaceColor: 0x9cb2d1,
+		surface: {
+			surface_right: {
+				surfaceColor: 0x9cb2d1,
+				imgurl: windowImg
+			},
+			surface_left: {
+				surfaceColor: 0x9cb2d1,
+				imgurl: windowImg
+			}
+		}
+	}
+}, {
+	name: '外厕-窗户A',
+	type: 'cube',
+	size: [32, 64, 2],
+	position: [-253, 30, 60],
+	rotation: [0, 0.5*Math.PI, 0],
+	style: {
+		surfaceColor: 0x9cb2d1,
+		surface: {
+			surface_right: {
+				surfaceColor: 0x9cb2d1,
+				imgurl: windowImg
+			},
+			surface_left: {
+				surfaceColor: 0x9cb2d1,
+				imgurl: windowImg
+			}
+		}
+	}
+}, {
+	name: '次卧-窗户A',
+	type: 'cube',
+	size: [32, 64, 2],
+	position: [-253, 30, 190],
+	rotation: [0, 0.5*Math.PI, 0],
+	style: {
+		surfaceColor: 0x9cb2d1,
+		surface: {
+			surface_right: {
+				surfaceColor: 0x9cb2d1,
+				imgurl: windowImg
+			},
+			surface_left: {
+				surfaceColor: 0x9cb2d1,
+				imgurl: windowImg
+			}
+		}
+	}
+}, {
+	name: '次卧-窗户B',
+	type: 'cube',
+	size: [32, 64, 2],
+	position: [-253, 30, 210],
+	rotation: [0, 0.5*Math.PI, 0],
+	style: {
+		surfaceColor: 0x9cb2d1,
+		surface: {
+			surface_right: {
+				surfaceColor: 0x9cb2d1,
+				imgurl: windowImg
+			},
+			surface_left: {
+				surfaceColor: 0x9cb2d1,
+				imgurl: windowImg
+			}
+		}
 	}
 }, {
 	name: '墙面',
@@ -99,6 +703,7 @@ var objects = [{
 	    show: true,
 	    uuid: "",
 	    name: 'doorhole',
+	    type: 'cube',
 	    objType: 'doorhole',
 	    size: [50, 80, 10],
 	    position: [-95, -32, -300],
@@ -127,6 +732,32 @@ var objects = [{
 	    }
 	}],
 }, {
+	name: 'door',
+	type: 'cube',
+	size: [50, 80, 10],
+	position: [-95, -32, -300],
+	style: {
+		surfaceColor: 0xd6e4ec,
+	    surface: {
+	        surface_left: {
+	            skinColor: 0xd6e4ec,
+	            imgurl: door,
+	            repeatx: false,
+	            repeaty: false,
+	            width: 50,
+	            height: 80,
+	        },
+	        surface_right: {
+	            skinColor: 0x9cb2d1,
+	            imgurl: door,
+	            repeatx: false,
+	            repeaty: false,
+	            width: 50,
+	            height: 80
+	        }
+	    },
+	}
+}, {
 	name: '客厅分隔墙',
 	type: 'cube',
 	size: [220, 150, 10],
@@ -141,22 +772,103 @@ var objects = [{
                 surfaceColor: 0xd6e4ec,
             }
         }
-	}
+	},
 }, {
-	name: '客厅分隔墙',
+	name: '厨房分隔墙',
 	type: 'cube',
-	size: [200, 150, 10],
-	position: [-140, 0, -90],
+	size: [200, 5, 25],
+	position: [-140, 40, -90],
+	rotation: [0, 0.5*Math.PI, 0],
 	style: {
 		surfaceColor: 0x9cb2d1,
 		surface: {
             surface_up: {
                 surfaceColor: 0xd6e4ec,
+                imgurl: desk
             },
             surface_down: {
                 surfaceColor: 0xd6e4ec,
+                imgurl: desk
+            },
+            surface_fore: {
+                surfaceColor: 0xd6e4ec,
+                imgurl: desk
+            },
+            surface_behind: {
+                surfaceColor: 0xd6e4ec,
+                imgurl: desk
+            },
+            surface_right: {
+            	surfaceColor: 0xd6e4ec,
+            	imgurl: desk
+            },
+            surface_left: {
+            	surfaceColor: 0xd6e4ec,
+            	imgurl: desk
             }
         }
+	},
+}, {
+	name: '吧台桌腿A',
+	type: 'cube',
+	size: [5, 120, 5],
+	position: [-150, -20, -185],
+	// rotation: [0.05*Math.PI, 0, 0],
+	style: {
+		surfaceColor: 0x9cb2d1,
+		surface: {
+			surface_left: {
+            	surfaceColor: 0xd6e4ec,
+            	imgurl: desk
+            },
+            surface_right: {
+            	surfaceColor: 0xd6e4ec,
+            	imgurl: desk
+            },
+            surface_up: {
+            	surfaceColor: 0xd6e4ec,
+            	imgurl: desk
+            },
+            surface_fore: {
+            	surfaceColor: 0xd6e4ec,
+            	imgurl: desk
+            },
+            surface_behind: {
+            	surfaceColor: 0xd6e4ec,
+            	imgurl: desk
+            }
+		}
+	}
+}, {
+	name: '吧台桌腿B',
+	type: 'cube',
+	size: [5, 120, 5],
+	position: [-135, -20, -185],
+	// rotation: [0, 0, 0],
+	style: {
+		surfaceColor: 0x9cb2d1,
+		surface: {
+			surface_left: {
+            	surfaceColor: 0xd6e4ec,
+            	imgurl: desk
+            },
+            surface_right: {
+            	surfaceColor: 0xd6e4ec,
+            	imgurl: desk
+            },
+            surface_up: {
+            	surfaceColor: 0xd6e4ec,
+            	imgurl: desk
+            },
+            surface_fore: {
+            	surfaceColor: 0xd6e4ec,
+            	imgurl: desk
+            },
+            surface_behind: {
+            	surfaceColor: 0xd6e4ec,
+            	imgurl: desk
+            }
+		}
 	}
 }, {
 	name: '次卧分隔墙',
@@ -189,13 +901,136 @@ var objects = [{
                 surfaceColor: 0xd6e4ec,
             }
         }
-	}
+	},
+
 }, {
 	name: '走廊分隔墙A',
 	type: 'cube',
 	size: [280, 150, 10],
 	position: [-50, 0, 155],
-	translate: 0.5*Math.PI,
+	rotation: [0, 0.5*Math.PI, 0],
+	style: {
+		surfaceColor: 0x9cb2d1,
+		surface: {
+            surface_up: {
+                surfaceColor: 0xd6e4ec,
+            },
+            surface_down: {
+                surfaceColor: 0xd6e4ec,
+            }
+        }
+	},
+	childrens: [{
+	    op: '-',
+	    show: true,
+	    uuid: "",
+	    name: 'doorhole',
+	    type: 'cube',
+	    objType: 'doorhole',
+	    size: [32, 100, 10],
+	    position: [-50, -25, 150],
+	    rotation: [0, -0.5*Math.PI, 0],
+	    style: {
+	    	surfaceColor: 0x9cb2d1,
+		    surface: {
+		        surface_up: {
+		            skinColor: 0x9cb2d1,
+		        },
+		        surface_down: {
+		            skinColor: 0x9cb2d1,
+		        },
+		        surface_fore: {
+		            skinColor: 0x9cb2d1,
+	            },
+		        surface_behind: {
+		            skinColor: 0x9cb2d1,
+		        },
+		        surface_left: {
+		            skinColor: 0xffdddd,
+		        },
+		        surface_right: {
+		            skinColor: 0x9cb2d1,
+		        }
+		    },
+	    }
+	}, {
+	    op: '-',
+	    show: true,
+	    uuid: "",
+	    name: 'doorhole',
+	    type: 'cube',
+	    objType: 'doorhole',
+	    size: [32, 100, 10],
+	    position: [-50, -25, 60],
+	    rotation: [0, -0.5*Math.PI, 0],
+	    style: {
+	    	surfaceColor: 0x9cb2d1,
+		    surface: {
+		        surface_up: {
+		            skinColor: 0x9cb2d1,
+		        },
+		        surface_down: {
+		            skinColor: 0x9cb2d1,
+		        },
+		        surface_fore: {
+		            skinColor: 0x9cb2d1,
+	            },
+		        surface_behind: {
+		            skinColor: 0x9cb2d1,
+		        },
+		        surface_left: {
+		            skinColor: 0xffdddd,
+		        },
+		        surface_right: {
+		            skinColor: 0x9cb2d1,
+		        }
+		    },
+	    }
+	},],
+},
+ {
+	name: '门',
+	type: 'cube',
+	size: [2, 100, 32],
+	position: [-50, -25, 150],
+	style: {
+		surfaceColor: 0x9cb2d1,
+		surface: {
+			surface_fore: {
+				surfaceColor: 0x9cb2d1,
+				imgurl: door2
+			},
+			surface_behind: {
+				surfaceColor: 0x9cb2d1,
+				imgurl: door2
+			}
+		}
+	}
+}, {
+	name: '门',
+	type: 'cube',
+	size: [2, 100, 32],
+	position: [-50, -25, 60],
+	style: {
+		surfaceColor: 0x9cb2d1,
+		surface: {
+			surface_fore: {
+				surfaceColor: 0x9cb2d1,
+				imgurl: door2
+			},
+			surface_behind: {
+				surfaceColor: 0x9cb2d1,
+				imgurl: door2
+			}
+		}
+	}
+}, 
+{
+	name: '走廊分隔墙B',
+	type: 'cube',
+	size: [380, 150, 10],
+	position: [25, 0, 105],
+	rotation: [0, 0.5*Math.PI, 0],
 	style: {
 		surfaceColor: 0x9cb2d1,
 		surface: {
@@ -213,8 +1048,43 @@ var objects = [{
 	    uuid: "",
 	    name: 'doorhole',
 	    objType: 'doorhole',
-	    size: [50, 60, 50],
-	    position: [-50, 0, 60],
+	    type: 'cube',
+	    size: [32, 100, 10],
+	    position: [25, -25, 30],
+	    rotation: [0, 0.5*Math.PI, 0],
+	    style: {
+	    	surfaceColor: 0x9cb2d1,
+		    surface: {
+		        surface_up: {
+		            skinColor: 0x9cb2d1,
+		        },
+		        surface_down: {
+		            skinColor: 0x9cb2d1,
+		        },
+		        surface_fore: {
+		            skinColor: 0x9cb2d1,
+	            },
+		        surface_behind: {
+		            skinColor: 0x9cb2d1,
+		        },
+		        surface_left: {
+		            skinColor: 0xffdddd,
+		        },
+		        surface_right: {
+		            skinColor: 0x9cb2d1,
+		        }
+		    },
+	    }
+	}, {
+	    op: '-',
+	    show: true,
+	    uuid: "",
+	    name: 'doorhole',
+	    objType: 'doorhole',
+	    type: 'cube',
+	    size: [32, 100, 10],
+	    position: [25, -25, 130],
+	    rotation: [0, 0.5*Math.PI, 0],
 	    style: {
 	    	surfaceColor: 0x9cb2d1,
 		    surface: {
@@ -240,7 +1110,61 @@ var objects = [{
 	    }
 	}],
 }, {
-	name: '走廊分隔墙B',
+	name: '门',
+	type: 'cube',
+	size: [2, 100, 32],
+	position: [25, 0, 105],
+	style: {
+		surfaceColor: 0x9cb2d1,
+		surface: {
+			surface_fore: {
+				surfaceColor: 0x9cb2d1,
+				imgurl: door2
+			},
+			surface_behind: {
+				surfaceColor: 0x9cb2d1,
+				imgurl: door2
+			}
+		}
+	}
+}, {
+	name: '门',
+	type: 'cube',
+	size: [2, 100, 32],
+	position: [25, -25, 30],
+	style: {
+		surfaceColor: 0x9cb2d1,
+		surface: {
+			surface_fore: {
+				surfaceColor: 0x9cb2d1,
+				imgurl: door2
+			},
+			surface_behind: {
+				surfaceColor: 0x9cb2d1,
+				imgurl: door2
+			}
+		}
+	}
+}, {
+	name: '门',
+	type: 'cube',
+	size: [2, 100, 32],
+	position: [25, -25, 130],
+	style: {
+		surfaceColor: 0x9cb2d1,
+		surface: {
+			surface_fore: {
+				surfaceColor: 0x9cb2d1,
+				imgurl: door2
+			},
+			surface_behind: {
+				surfaceColor: 0x9cb2d1,
+				imgurl: door2
+			}
+		}
+	}
+},{
+	name: '洗手间分隔墙',
 	type: 'cube',
 	size: [190, 150, 10],
 	position: [-150, 0, 100],
@@ -260,7 +1184,7 @@ var objects = [{
 	type: 'cube',
 	size: [140, 150, 10],
 	position: [100, 0, 225],
-	translate: 0.5*Math.PI,
+	rotation: [0, 0.5*Math.PI, 0],
 	style: {
 		surfaceColor: 0x9cb2d1,
 		surface: {
@@ -272,6 +1196,7 @@ var objects = [{
             }
         }
 	},
+	
 }, {
 	name: '主卧厕分隔墙B',
 	type: 'cube',
@@ -288,7 +1213,58 @@ var objects = [{
             }
         }
 	},
-}]
+	childrens: [{
+	    op: '-',
+	    show: true,
+	    uuid: "",
+	    name: 'doorhole',
+	    type: 'cube',
+	    objType: 'doorhole',
+	    size: [32, 100, 10],
+	    position: [62, -25, 160],
+	    style: {
+	    	surfaceColor: 0x9cb2d1,
+		    surface: {
+		        surface_up: {
+		            skinColor: 0x9cb2d1,
+		        },
+		        surface_down: {
+		            skinColor: 0x9cb2d1,
+		        },
+		        surface_fore: {
+		            skinColor: 0x9cb2d1,
+	            },
+		        surface_behind: {
+		            skinColor: 0x9cb2d1,
+		        },
+		        surface_left: {
+		            skinColor: 0xffdddd,
+		        },
+		        surface_right: {
+		            skinColor: 0x9cb2d1,
+		        }
+		    },
+	    }
+	}]
+},{
+	name: '门',
+	type: 'cube',
+	size: [32, 100, 2],
+	position: [62, -25, 160],
+	style: {
+		surfaceColor: 0x9cb2d1,
+		surface: {
+			surface_right: {
+				surfaceColor: 0x9cb2d1,
+				imgurl: door2
+			},
+			surface_left: {
+				surfaceColor: 0x9cb2d1,
+				imgurl: door2
+			}
+		}
+	}
+},]
 
 
 module.exports = objects;

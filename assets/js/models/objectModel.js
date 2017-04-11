@@ -19,17 +19,17 @@ Stuff.prototype = {
 			shape.name = object.name;
 			var [positionX, positionY, positionZ] = object.position;
 			shape.position.set(positionX, positionY, positionZ);
-			if(object.translate) {
-				shape.rotation.y = object.translate;
+			if(object.rotation) {
+				[shape.rotation.x, shape.rotation.y, shape.rotation.z] = object.rotation;
 			}
 			if (object.childrens && object.childrens.length > 0) {
 				var newShape = null;
 				object.childrens.forEach((childObj, index) => {
 					var _newobj = null;
 					_newobj = self.createHole(childObj);
-					newShape = self.mergeModel(childObj.op, shape, _newobj);
-					callback(newShape);
+					shape = self.mergeModel(childObj.op, shape, _newobj);
 				})
+				callback(shape)
 			}
 			else {
 				callback(shape);
@@ -46,9 +46,10 @@ Stuff.prototype = {
 		shape.name = object.name;
 		var [positionX, positionY, positionZ] = object.position;
 		shape.position.set(positionX, positionY, positionZ);
-		if(object.translate) {
-			shape.rotation.y = object.translate;
+		if(object.rotation) {
+			[shape.rotation.x, shape.rotation.y, shape.rotation.z] = object.rotation;
 		}
+
         return shape;
 	},
 	createShape: function(object) {
@@ -58,7 +59,6 @@ Stuff.prototype = {
 	},
 	createMaterial: function(cubeGeometry, object) {
 		var self = this;
-
 		var [_width, _height, _depth] = object.size;
 
 		//六面颜色
@@ -76,14 +76,8 @@ Stuff.prototype = {
 		    surface_behind_obj = surface_up_obj,
 		    surface_left_obj = surface_up_obj,
 		    surface_right_obj = surface_up_obj;
-		var face_opacity = 1;
 		if (object.style != null && typeof (object.style) != 'undefined'
 		    && object.style.surface != null && typeof (object.style.surface) != 'undefined') {
-		    //透明度
-		    if (object.style.surface.opacity != null && typeof (object.style.surface.opacity) != 'undefined') {
-		        surface_opacity = object.style.surface.opacity;
-		        console.log(surface_opacity)
-		    }
 		    //上
 		    surface_up_obj = self.createSurface(_width, _depth, object.style.surface.surface_up, cubeGeometry, 4);
 		    //下
@@ -113,6 +107,7 @@ Stuff.prototype = {
 		var self = this;
 		if(_obj) {
 			if (_obj.imgurl) {
+				
 			    return {
 			        map: self.createTexture(fWidth, fHeight, _obj),transparent:true
 			    }
@@ -121,9 +116,18 @@ Stuff.prototype = {
 			        _cube.faces[_cubefacenub].color.setHex(_obj.surfaceColor);
 			        _cube.faces[_cubefacenub + 1].color.setHex(_obj.surfaceColor);
 			    }
-			    return {
-			        vertexColors: THREE.FaceColors
+			    if(_obj.transparent) {
+			    	return {
+			    		vertexColors: THREE.FaceColors,
+			    		transparent: true,
+			    		opacity: _obj.opacity
+			    	}
+			    }else {
+			    	return {
+			    	    vertexColors: THREE.FaceColors
+			    	}
 			    }
+			   
 			}
 		}
 		else {
@@ -164,7 +168,6 @@ Stuff.prototype = {
 		if (mergeOP == '-') {
 		    resultBSP = fobjBSP.subtract(sobjBSP);
 		} else if (mergeOP == '+') {
-		    var subMesh = new THREE.Mesh(sObj);
 		    sObj.updateMatrix();
 		    fObj.geometry.merge(sObj.geometry, sObj.matrix);
 		    return fObj;
@@ -190,7 +193,6 @@ Stuff.prototype = {
 		result.geometry.buffersNeedUpdate = true;
 		result.geometry.uvsNeedUpdate = true;
 		var _foreFaceSkin = null;
-		console.log(result.geometry.faces)
 		for (var i = 0; i < result.geometry.faces.length; i++) {
 		    var _faceset = false;
 		    for (var j = 0; j < fObj.geometry.faces.length; j++) {
@@ -200,7 +202,6 @@ Stuff.prototype = {
 		            result.geometry.faces[i].color.setHex(fObj.geometry.faces[j].color.r * 0xff0000 + fObj.geometry.faces[j].color.g * 0x00ff00 + fObj.geometry.faces[j].color.b * 0x0000ff);
 		            _foreFaceSkin = fObj.geometry.faces[j].color.r * 0xff0000 + fObj.geometry.faces[j].color.g * 0x00ff00 + fObj.geometry.faces[j].color.b * 0x0000ff;
 		            _faceset =true;
-		            console.log(1, _faceset)
 		        }
 		    }
 		    if (_faceset == false){
@@ -211,12 +212,10 @@ Stuff.prototype = {
 		                result.geometry.faces[i].color.setHex(sObj.geometry.faces[j].color.r * 0xff0000 + sObj.geometry.faces[j].color.g * 0x00ff00 + sObj.geometry.faces[j].color.b * 0x0000ff);
 		                _foreFaceSkin = sObj.geometry.faces[j].color.r * 0xff0000 + sObj.geometry.faces[j].color.g * 0x00ff00 + sObj.geometry.faces[j].color.b * 0x0000ff;
 		                _faceset = true;
-		                console.log(2);
 		            }
 		        }
 		    }
 		    if (_faceset == false) {
-		    	console.log(3, _foreFaceSkin)
 		        result.geometry.faces[i].color.setHex(_foreFaceSkin);
 		    }
 		 // result.geometry.faces[i].materialIndex = i
