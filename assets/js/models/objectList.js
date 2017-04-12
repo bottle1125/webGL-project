@@ -603,6 +603,7 @@ var objects = [{
 	size: [32, 64, 2],
 	position: [-253, 30, -100],
 	rotation: [0, 0.5*Math.PI, 0],
+	status: 'open',
 	style: {
 		surfaceColor: 0x9cb2d1,
 		surface: {
@@ -659,8 +660,9 @@ var objects = [{
 	name: 'second-bedroom-windowA',
 	type: 'cube',
 	size: [32, 64, 2],
-	position: [-253, 30, 190],
+	position: [-253, 30, 180],
 	rotation: [0, 0.5*Math.PI, 0],
+	status: 'close',
 	style: {
 		surfaceColor: 0x9cb2d1,
 		surface: {
@@ -745,10 +747,11 @@ var objects = [{
 }, {
 	name: 'main-door',
 	type: 'cube',
-	size: [50, 80, 10],
+	size: [50, 80, 2],
 	position: [-95, -32, -300],
+	status: 'close',
 	style: {
-		surfaceColor: 0xd6e4ec,
+		surfaceColor: 0x996967,
 	    surface: {
 	        surface_left: {
 	            skinColor: 0xd6e4ec,
@@ -996,36 +999,38 @@ var objects = [{
 	    }
 	},],
 }, {
-	name: 'second-bedroom-doorA',
+	name: 'second-bedroom-door',
 	type: 'cube',
-	size: [2, 100, 32],
+	size: [32, 100, 2],
 	position: [-50, -25, 150],
+	rotation: [0, 0.5*Math.PI, 0],
 	style: {
-		surfaceColor: 0x9cb2d1,
+		surfaceColor: 0xE2CCA2,
 		surface: {
-			surface_fore: {
+			surface_right: {
 				surfaceColor: 0x9cb2d1,
 				imgurl: door2
 			},
-			surface_behind: {
+			surface_left: {
 				surfaceColor: 0x9cb2d1,
 				imgurl: door2
 			}
 		}
 	}
 }, {
-	name: 'second-bedroom-doorB',
+	name: 'toilets-door',
 	type: 'cube',
-	size: [2, 100, 32],
+	size: [32, 100, 2],
 	position: [-50, -25, 60],
+	rotation: [0, 0.5*Math.PI, 0],
 	style: {
-		surfaceColor: 0x9cb2d1,
+		surfaceColor: 0xE2CCA2,
 		surface: {
-			surface_fore: {
+			surface_right: {
 				surfaceColor: 0x9cb2d1,
 				imgurl: door2
 			},
-			surface_behind: {
+			surface_left: {
 				surfaceColor: 0x9cb2d1,
 				imgurl: door2
 			}
@@ -1119,16 +1124,18 @@ var objects = [{
 }, {
 	name: 'study-door',
 	type: 'cube',
-	size: [2, 100, 32],
+	size: [32, 100, 2],
 	position: [25, -25, 30],
+	rotation: [0, 0.5*Math.PI, 0],
+	status: 'close',
 	style: {
-		surfaceColor: 0x9cb2d1,
+		surfaceColor: 0xE2CCA2,
 		surface: {
-			surface_fore: {
+			surface_right: {
 				surfaceColor: 0x9cb2d1,
 				imgurl: door2
 			},
-			surface_behind: {
+			surface_left: {
 				surfaceColor: 0x9cb2d1,
 				imgurl: door2
 			}
@@ -1137,16 +1144,18 @@ var objects = [{
 }, {
 	name: 'living-room-door',
 	type: 'cube',
-	size: [2, 100, 32],
+	size: [32, 100, 2],
 	position: [25, -25, 130],
+	rotation: [0, 0.5*Math.PI, 0],
+	status: 'close',
 	style: {
-		surfaceColor: 0x9cb2d1,
+		surfaceColor: 0xE2CCA2,
 		surface: {
-			surface_fore: {
+			surface_right: {
 				surfaceColor: 0x9cb2d1,
 				imgurl: door2
 			},
-			surface_behind: {
+			surface_left: {
 				surfaceColor: 0x9cb2d1,
 				imgurl: door2
 			}
@@ -1235,12 +1244,13 @@ var objects = [{
 	    }
 	}]
 },{
-	name: 'living-room-toilet-door',
+	name: 'master-bedroom-toilet-door',
 	type: 'cube',
 	size: [32, 100, 2],
 	position: [62, -25, 160],
+	status: 'close',
 	style: {
-		surfaceColor: 0x9cb2d1,
+		surfaceColor: 0xE2CCA2,
 		surface: {
 			surface_right: {
 				surfaceColor: 0x9cb2d1,

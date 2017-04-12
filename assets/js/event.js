@@ -111,6 +111,197 @@ var events = {
                 }
             }
         },
+        {
+            obj_name: 'second-bedroom-windowA',
+            obj_event: function(_mesh) {
+                if(_mesh.status === 'open') {
+                    _mesh.position.set(-253, 30, 180);
+                    _mesh.status = 'close';
+                }
+                else {
+                    _mesh.position.set(-253, 30, 200);
+                    _mesh.status = 'open';
+                }
+            }
+        },{
+           obj_name: 'kitchen-windowA',
+           obj_event: function(_mesh) {
+               if(_mesh.status === 'open') {
+                   _mesh.position.set(-253, 30, -115);
+                   _mesh.status = 'close';
+               }
+               else {
+                   _mesh.position.set(-253, 30, -100);
+                   _mesh.status = 'open';
+               }
+           } 
+        }, {
+            obj_name: 'main-door',
+            obj_event: function(_mesh, _scene) {
+                if(_mesh.status === 'open') {
+                    var parent = new THREE.Object3D();
+                    parent.add(_mesh);
+                    parent.position.set(-95, -32, -300)
+                    _mesh.position.set(0, 0, 0);
+                    _scene.add(parent)
+                    
+                    _mesh.status = 'close'; 
+                }
+                else {
+                    var parent = new THREE.Object3D();
+                    parent.add(_mesh);
+                    parent.position.set(-120, -32, -300)
+                    _mesh.position.set(35, 0, 0);
+                    _scene.add(parent)
+                    parent.rotation.y = 0.5*Math.PI;
+                    _mesh.status = 'open';
+                }
+            } 
+        },
+        {
+            obj_name: 'study-door',
+            obj_event: function(_mesh, _scene) {
+               if(_mesh.status === 'open') {
+                    var parent = new THREE.Object3D();
+                    parent.add(_mesh);
+                    parent.position.set(25, -25, 45);
+                    parent.rotation.y = 0.5*Math.PI;
+                    _mesh.position.set(15, 0, 0);
+                    _mesh.rotation.y = 0;
+                    _scene.add(parent)
+                    _mesh.status = 'close';
+               }
+               else {
+                    var parent = new THREE.Object3D();
+                    parent.add(_mesh);
+                    parent.position.set(25, -25, 45);
+                    parent.rotation.y = 0.1*Math.PI;
+                    _mesh.position.set(15, 0, 0);
+                    _mesh.rotation.y = 0;
+                    _scene.add(parent)
+                    _mesh.status = 'open';
+               }
+           } 
+        },
+        {
+            obj_name: 'living-room-door',
+            obj_event: function(_mesh, _scene) {
+                if(_mesh.status === 'open') {
+                     var parent = new THREE.Object3D();
+                     parent.add(_mesh);
+                     parent.position.set(25, -25, 145);
+                     parent.rotation.y = 0.5*Math.PI;
+                     _mesh.position.set(15, 0, 0);
+                     _mesh.rotation.y = 0;
+                     _scene.add(parent)
+                     _mesh.status = 'close';
+                }
+                else {
+                     var parent = new THREE.Object3D();
+                     parent.add(_mesh);
+                     parent.position.set(25, -25, 145);
+                     parent.rotation.y = 0.1*Math.PI;
+                     _mesh.position.set(15, 0, 0);
+                     _mesh.rotation.y = 0;
+                     _scene.add(parent)
+                     _mesh.status = 'open';
+                }
+            } 
+        },
+        {
+            obj_name: 'master-bedroom-toilet-door',
+            obj_event: function(_mesh, _scene) {
+                if(_mesh.status === 'open') {
+                     var parent = new THREE.Object3D();
+                     parent.add(_mesh);
+                     parent.position.set(46, -25, 160);
+                     _mesh.position.set(16, 0, 0);
+                     _scene.add(parent)
+                     _mesh.status = 'close';
+                }
+                else {
+                     var parent = new THREE.Object3D();
+                     parent.add(_mesh);
+                     parent.position.set(46, -25, 160);
+                     parent.rotation.y = -0.5*Math.PI;
+                     _mesh.position.set(16, 0, 0);
+                     _scene.add(parent)
+                     _mesh.status = 'open';
+                }
+            } 
+        },
+        {
+            obj_name: 'master-bedroom-toilet-door',
+            obj_event: function(_mesh, _scene) {
+                if(_mesh.status === 'open') {
+                     var parent = new THREE.Object3D();
+                     parent.add(_mesh);
+                     parent.position.set(46, -25, 160);
+                     _mesh.position.set(16, 0, 0);
+                     _scene.add(parent)
+                     _mesh.status = 'close';
+                }
+                else {
+                     var parent = new THREE.Object3D();
+                     parent.add(_mesh);
+                     parent.position.set(46, -25, 160);
+                     parent.rotation.y = -0.5*Math.PI;
+                     _mesh.position.set(16, 0, 0);
+                     _scene.add(parent)
+                     _mesh.status = 'open';
+                }
+            } 
+        },
+        {
+            obj_name: 'second-bedroom-door',
+            obj_event: function(_mesh, _scene) {
+                if(_mesh.status === 'open') {
+                     var parent = new THREE.Object3D();
+                     parent.add(_mesh);
+                     parent.position.set(-50, -25, 150);
+                     parent.rotation.y = 0.5*Math.PI;
+                     _mesh.position.set(0, 0, 0);
+                     _mesh.rotation.y = 0;
+                     _scene.add(parent)
+                     _mesh.status = 'close';
+                }
+                else {
+                     var parent = new THREE.Object3D();
+                     parent.add(_mesh);
+                     parent.position.set(-50, -25, 135);
+                     parent.rotation.y = -0.8*Math.PI;
+                     _mesh.position.set(15, 0, 0);
+                     _mesh.rotation.y = 0;
+                     _scene.add(parent)
+                     _mesh.status = 'open';
+                }
+            } 
+        },
+        {
+            obj_name: 'toilets-door',
+            obj_event: function(_mesh, _scene) {
+                if(_mesh.status === 'open') {
+                     var parent = new THREE.Object3D();
+                     parent.add(_mesh);
+                     parent.position.set(-50, -25, 60);
+                      parent.rotation.y = 0.5*Math.PI;
+                     _mesh.position.set(0, 0, 0);
+                     _mesh.rotation.y = 0;
+                     _scene.add(parent)
+                     _mesh.status = 'close';
+                }
+                else {
+                     var parent = new THREE.Object3D();
+                     parent.add(_mesh);
+                     parent.position.set(-50, -25, 45);
+                     parent.rotation.y = -0.7*Math.PI;
+                     _mesh.position.set(15, 0, 0);
+                     _mesh.rotation.y = 0;
+                     _scene.add(parent)
+                     _mesh.status = 'open';
+                }
+            }
+        },
          {
              findObject:function(_objname){//查找某一类符合名称的对象
                  if (_objname.indexOf("cabinet") >= 0 && _objname.indexOf("door") >= 0) {
