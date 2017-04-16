@@ -1,5 +1,4 @@
 'use strict'
-var THREE = require('n3d-threejs')
 
 /**
  * 透视投影相机
@@ -32,5 +31,3 @@ Camera.prototype.init = function(options, callback) {
 	camera.up.set(0, 1, 0)
 	callback(camera);
 }
-
-module.exports = Camera;

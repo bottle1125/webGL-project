@@ -3,6 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>webGL-project</title>
+	<link rel="stylesheet" type="text/css" href="./assets/css/index.css">
 </head>
 <body>
 	<div id="canvas-frame" class="canvas-frame"></div>
@@ -10,20 +11,20 @@
 		<p>相机位置</p>
 		<div>
 			<label>x轴：</label>
-			<input type="number" name="" value="26" id="axisX">
+			<input type="number" name="" value="70" id="axisX">
 		</div>
 		<div>
 			<label>y轴：</label>
-			<input type="number" name="" value="0" id="axisY">
+			<input type="number" name="" value="409" id="axisY">
 		</div>
 		<div>
 			<label>z轴：</label>
-			<input type="number" name="" value="82" id="axisZ">
+			<input type="number" name="" value="397" id="axisZ">
 		</div>
 		<p>相机视角</p>
 		<div>
 			<label>x轴：</label>
-			<input type="number" name="" value="-494" id="perspectiveX">
+			<input type="number" name="" value="0" id="perspectiveX">
 		</div>
 		<div>
 			<label>y轴：</label>
@@ -31,8 +32,26 @@
 		</div>
 		<div>
 			<label>z轴：</label>
-			<input type="number" name="" value="88" id="perspectiveZ">
+			<input type="number" name="" value="0" id="perspectiveZ">
 		</div>
 	</div>
+	<script src="./lib/three.js"></script>
+	<script src="./lib/MTLLoader.js"></script>
+	<script src="./lib/OBJLoader.js"></script>
+	<script src="./lib/DDS.js"></script>
+	<script src="./lib/threeBSP.js"></script>
+
+	<script src="./assets/js/camera.js"></script>
+	<script src="./assets/js/light.js"></script>
+	<script src="./assets/js/3d-models.js"></script>
+	<script src="./assets/js/models/objectList.js"></script>
+	<script src="./assets/js/models/objectModel.js"></script>
+	<script src="./assets/js/event.js"></script>
+	<script src="./assets/js/render.js"></script>
+	<script src="./assets/js/main.js"></script>
+
+	<script type="text/javascript">
+		new Page()
+	</script>
 </body>
 </html>

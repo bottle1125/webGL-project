@@ -1,14 +1,4 @@
 'use strict'
-var THREE = require('n3d-threejs')
-
-
-
-var Renderer = require('./render.js');
-var Camera = require('./camera.js');
-var Stuff = require('./models/objectModel.js');
-var objectList = require('./models/objectList.js');
-var eventsList = require('./event.js')
-var Light = require('./light.js')
 
 var renderer;
 
@@ -32,8 +22,8 @@ Page.prototype = {
 		this.mouseClick = new THREE.Vector2();
 		this.raycaster = new THREE.Raycaster();
 		this.SELECTED = null;
-		this.objList = objectList;//对象列表
-		this.eventList = eventsList;//事件对象列表
+		this.objList = new Shape().haveObjects();//对象列表
+		this.eventList = new ObjectEvent().haveEvents();//事件对象列表
 		this.objects = [];
 		// 初始化场景
 		this.scene = new THREE.Scene();
@@ -51,9 +41,8 @@ Page.prototype = {
 		// render
 		this.render();
 	},
-	initLight: function(scene) {
-		var light = new Light();
-		light.init(scene)
+	initLight: function() {
+		var light = new Light().init(this.scene)
 	},
 	initRenderer: function(canvasFrame, cWidth, cHeight) {
 		var self = this;
@@ -81,10 +70,47 @@ Page.prototype = {
 	createCube: function() {
 		var self = this;
 		var params = [];
-		var len = objectList.length;
+		var len = self.objList.length;
+		new CreateMtlObj().create({
+			mtlBaseUrl: './assets/js/models/3d-models/',
+			mtlPath: './assets/js/models/3d-models/',
+			mtlFileName: 'test.mtl',
+			objPath: './assets/js/models/3d-models/',
+			objFileName: 'test.obj',
+			completeCallback: function(object) {
+				object.children.forEach(function(child) { 
+
+				                child.material.side = THREE.DoubleSide;//设置贴图模式为双面贴图
+				                child.material.emissive.r=0;//设置rgb通道R通道颜色
+				                child.material.emissive.g=0.01;//设置rgb通道G通道颜色
+				                child.material.emissive.b=0.05;//设置rgb通道B通道颜色
+				                child.material.transparent=true;//材质允许透明
+				                child.material.opacity=1;//材质默认透明度                        
+				                child.material.shading=THREE.SmoothShading;//平滑渲染
+
+				        });
+				        object.emissive=0x00ffff;//自发光颜色
+				        object.ambient=0x00ffff;//环境光颜色
+				        // object.rotation.y= 0;//x轴方向旋转角度
+				        object.position.y = 100;//位置坐标X
+				        object.position.z = 0;//位置坐标y
+				        object.position.x = 0;
+				        object.scale.x=0.05;//缩放级别
+				        object.scale.y=0.05;//缩放级别
+				        object.scale.z=0.05;//缩放级别
+				        // object.name="haven";//刚体名称
+				        // object.rotation.y=-Math.PI;//初始Y轴方向旋转角度
+				        self.scene.add(object);//添加到场景中
+				        console.log(object)
+			},
+			progress: function(persent) {
+
+			}
+		})
+
 		for(let i=0; i<len; i++) {
 			var stuff = new Stuff();
-			stuff.init(objectList[i], function(result) {
+			stuff.init(self.objList[i], function(result) {
 				self.objects.push(result);
 				self.scene.add(result);
 			})
@@ -126,7 +152,6 @@ Page.prototype = {
 		    var intersects = _this.raycaster.intersectObjects(_this.objects);
 		    if (intersects.length > 0) {
 		        _this.SELECTED = intersects[0].object;
-		        console.log(_this.SELECTED)
 		        if (_this.eventList != null && _this.eventList.dbclick != null && _this.eventList.dbclick.length > 0) {
 		            _this.eventList.dbclick.forEach((_obj, index) => {
 		                if ("string" == typeof (_obj.obj_name)) {
@@ -144,7 +169,6 @@ Page.prototype = {
 		}
 	},
 	onDocumentMouseMove: function(event) {
-		console.log(5555)
 		event.preventDefault();
 		_this.mouseClick.x = (event.clientX / _this.width) * 2 - 1;
 		_this.mouseClick.y = -(event.clientY / _this.height) * 2 + 1;
@@ -153,6 +177,5 @@ Page.prototype = {
 }
 
 
-module.exports = Page;
 
 

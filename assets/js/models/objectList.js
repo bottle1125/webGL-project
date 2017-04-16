@@ -1,13 +1,11 @@
 'use strict'
 
-var THREE = require('n3d-threejs')
-var floor = require('../../img/floor.jpg')
-var door = require('../../img/doorL.jpg')
-var desk = require('../../img/desk.jpg')
-var windowImg = require('../../img/windowL.jpg')
-var door2 = require('../../img/door2.jpg')
-var frame = require('../../img/frame-door2.jpg')
+function Shape() {
 
+}
+Shape.prototype.haveObjects = function() {
+	return objects;
+}
 var objects = [{
 	name: 'floor',
 	type: 'cube',
@@ -18,7 +16,7 @@ var objects = [{
 		surface: {
             surface_up: {
                 surfaceColor: 0x98750f,
-                imgurl: floor,
+                imgurl: '../../assets/img/floor.jpg',
                 repeatx: true,
                 repeaty: true,
                 width: 32,
@@ -91,11 +89,11 @@ var objects = [{
 		surface: {
 			surface_right: {
 				surfaceColor: 0x9cb2d1,
-				imgurl: windowImg
+				imgurl: '../../assets/img/windowL.jpg'
 			},
 			surface_left: {
 				surfaceColor: 0x9cb2d1,
-				imgurl: windowImg
+				imgurl: '../../assets/img/windowL.jpg'
 			}
 		}
 	}
@@ -228,7 +226,7 @@ var objects = [{
 		surface: {
 			surface_right: {
 				surfaceColor: 0xffff00,
-				imgurl: frame,
+				imgurl: '../../assets/img/frame-door2.jpg',
 				repeatx: false,
 				repeaty: false,
 				transparent: true,
@@ -236,7 +234,7 @@ var objects = [{
 			},
 			surface_left: {
 				surfaceColor: 0xffff00,
-				imgurl: frame,
+				imgurl: '../../assets/img/frame-door2.jpg',
 				repeatx: false,
 				repeaty: false,
 				transparent: true,
@@ -256,7 +254,7 @@ var objects = [{
 		surface: {
 			surface_right: {
 				surfaceColor: 0xffff00,
-				imgurl: frame,
+				imgurl: '../../assets/img/frame-door2.jpg',
 				repeatx: false,
 				repeaty: false,
 				transparent: true,
@@ -264,7 +262,7 @@ var objects = [{
 			},
 			surface_left: {
 				surfaceColor: 0xffff00,
-				imgurl: frame,
+				imgurl: '../../assets/img/frame-door2.jpg',
 				repeatx: false,
 				repeaty: false,
 				transparent: true,
@@ -284,7 +282,7 @@ var objects = [{
 		surface: {
 			surface_right: {
 				surfaceColor: 0xffff00,
-				imgurl: frame,
+				imgurl: '../../assets/img/frame-door2.jpg',
 				repeatx: false,
 				repeaty: false,
 				transparent: true,
@@ -292,7 +290,7 @@ var objects = [{
 			},
 			surface_left: {
 				surfaceColor: 0xffff00,
-				imgurl: frame,
+				imgurl: '../../assets/img/frame-door2.jpg',
 				repeatx: false,
 				repeaty: false,
 				transparent: true,
@@ -312,7 +310,7 @@ var objects = [{
 		surface: {
 			surface_right: {
 				surfaceColor: 0xffff00,
-				imgurl: frame,
+				imgurl: '../../assets/img/frame-door2.jpg',
 				repeatx: false,
 				repeaty: false,
 				transparent: true,
@@ -320,7 +318,7 @@ var objects = [{
 			},
 			surface_left: {
 				surfaceColor: 0xffff00,
-				imgurl: frame,
+				imgurl: '../../assets/img/frame-door2.jpg',
 				repeatx: false,
 				repeaty: false,
 				transparent: true,
@@ -340,7 +338,7 @@ var objects = [{
 		surface: {
 			surface_right: {
 				surfaceColor: 0xffff00,
-				imgurl: frame,
+				imgurl: '../../assets/img/frame-door2.jpg',
 				repeatx: false,
 				repeaty: false,
 				transparent: true,
@@ -348,7 +346,7 @@ var objects = [{
 			},
 			surface_left: {
 				surfaceColor: 0xffff00,
-				imgurl: frame,
+				imgurl: '../../assets/img/frame-door2.jpg',
 				repeatx: false,
 				repeaty: false,
 				transparent: true,
@@ -368,7 +366,7 @@ var objects = [{
 		surface: {
 			surface_right: {
 				surfaceColor: 0xffff00,
-				imgurl: frame,
+				imgurl: '../../assets/img/frame-door2.jpg',
 				repeatx: false,
 				repeaty: false,
 				transparent: true,
@@ -376,7 +374,7 @@ var objects = [{
 			},
 			surface_left: {
 				surfaceColor: 0xffff00,
-				imgurl: frame,
+				imgurl: '../../assets/img/frame-door2.jpg',
 				repeatx: false,
 				repeaty: false,
 				transparent: true,
@@ -396,7 +394,7 @@ var objects = [{
 		surface: {
 			surface_right: {
 				surfaceColor: 0xffff00,
-				imgurl: frame,
+				imgurl: '../../assets/img/frame-door2.jpg',
 				repeatx: false,
 				repeaty: false,
 				transparent: true,
@@ -404,7 +402,7 @@ var objects = [{
 			},
 			surface_left: {
 				surfaceColor: 0xffff00,
-				imgurl: frame,
+				imgurl: '../../assets/img/frame-door2.jpg',
 				repeatx: false,
 				repeaty: false,
 				transparent: true,
@@ -424,7 +422,7 @@ var objects = [{
 		surface: {
 			surface_right: {
 				surfaceColor: 0xffff00,
-				imgurl: frame,
+				imgurl: '../../assets/img/frame-door2.jpg',
 				repeatx: false,
 				repeaty: false,
 				transparent: true,
@@ -432,7 +430,7 @@ var objects = [{
 			},
 			surface_left: {
 				surfaceColor: 0xffff00,
-				imgurl: frame,
+				imgurl: '../../assets/img/frame-door2.jpg',
 				repeatx: false,
 				repeaty: false,
 				transparent: true,
@@ -452,11 +450,11 @@ var objects = [{
 		surface: {
 			surface_right: {
 				surfaceColor: 0x9cb2d1,
-				imgurl: windowImg
+				imgurl: '../../assets/img/windowL.jpg'
 			},
 			surface_left: {
 				surfaceColor: 0x9cb2d1,
-				imgurl: windowImg
+				imgurl: '../../assets/img/windowL.jpg'
 			}
 		}
 	}
@@ -472,11 +470,11 @@ var objects = [{
 		surface: {
 			surface_right: {
 				surfaceColor: 0x9cb2d1,
-				imgurl: windowImg
+				imgurl: '../../assets/img/windowL.jpg'
 			},
 			surface_left: {
 				surfaceColor: 0x9cb2d1,
-				imgurl: windowImg
+				imgurl: '../../assets/img/windowL.jpg'
 			}
 		}
 	}
@@ -609,11 +607,11 @@ var objects = [{
 		surface: {
 			surface_right: {
 				surfaceColor: 0x9cb2d1,
-				imgurl: windowImg
+				imgurl: '../../assets/img/windowL.jpg'
 			},
 			surface_left: {
 				surfaceColor: 0x9cb2d1,
-				imgurl: windowImg
+				imgurl: '../../assets/img/windowL.jpg'
 			}
 		}
 	}
@@ -628,11 +626,11 @@ var objects = [{
 		surface: {
 			surface_right: {
 				surfaceColor: 0x9cb2d1,
-				imgurl: windowImg
+				imgurl: '../../assets/img/windowL.jpg'
 			},
 			surface_left: {
 				surfaceColor: 0x9cb2d1,
-				imgurl: windowImg
+				imgurl: '../../assets/img/windowL.jpg'
 			}
 		}
 	}
@@ -648,11 +646,11 @@ var objects = [{
 		surface: {
 			surface_right: {
 				surfaceColor: 0x9cb2d1,
-				imgurl: windowImg
+				imgurl: '../../assets/img/windowL.jpg'
 			},
 			surface_left: {
 				surfaceColor: 0x9cb2d1,
-				imgurl: windowImg
+				imgurl: '../../assets/img/windowL.jpg'
 			}
 		}
 	}
@@ -668,11 +666,11 @@ var objects = [{
 		surface: {
 			surface_right: {
 				surfaceColor: 0x9cb2d1,
-				imgurl: windowImg
+				imgurl: '../../assets/img/windowL.jpg'
 			},
 			surface_left: {
 				surfaceColor: 0x9cb2d1,
-				imgurl: windowImg
+				imgurl: '../../assets/img/windowL.jpg'
 			}
 		}
 	}
@@ -687,11 +685,11 @@ var objects = [{
 		surface: {
 			surface_right: {
 				surfaceColor: 0x9cb2d1,
-				imgurl: windowImg
+				imgurl: '../../assets/img/windowL.jpg'
 			},
 			surface_left: {
 				surfaceColor: 0x9cb2d1,
-				imgurl: windowImg
+				imgurl: '../../assets/img/windowL.jpg'
 			}
 		}
 	}
@@ -755,7 +753,7 @@ var objects = [{
 	    surface: {
 	        surface_left: {
 	            skinColor: 0xd6e4ec,
-	            imgurl: door,
+	            imgurl: '../../assets/img/doorL.jpg',
 	            repeatx: false,
 	            repeaty: false,
 	            width: 50,
@@ -763,7 +761,7 @@ var objects = [{
 	        },
 	        surface_right: {
 	            skinColor: 0x9cb2d1,
-	            imgurl: door,
+	            imgurl: '../../assets/img/doorL.jpg',
 	            repeatx: false,
 	            repeaty: false,
 	            width: 50,
@@ -798,27 +796,27 @@ var objects = [{
 		surface: {
             surface_up: {
                 surfaceColor: 0xd6e4ec,
-                imgurl: desk
+                imgurl: '../../assets/img/desk.jpg'
             },
             surface_down: {
                 surfaceColor: 0xd6e4ec,
-                imgurl: desk
+                imgurl: '../../assets/img/desk.jpg'
             },
             surface_fore: {
                 surfaceColor: 0xd6e4ec,
-                imgurl: desk
+                imgurl: '../../assets/img/desk.jpg'
             },
             surface_behind: {
                 surfaceColor: 0xd6e4ec,
-                imgurl: desk
+                imgurl: '../../assets/img/desk.jpg'
             },
             surface_right: {
             	surfaceColor: 0xd6e4ec,
-            	imgurl: desk
+            	imgurl: '../../assets/img/desk.jpg'
             },
             surface_left: {
             	surfaceColor: 0xd6e4ec,
-            	imgurl: desk
+            	imgurl: '../../assets/img/desk.jpg'
             }
         }
 	},
@@ -832,23 +830,23 @@ var objects = [{
 		surface: {
 			surface_left: {
             	surfaceColor: 0xd6e4ec,
-            	imgurl: desk
+            	imgurl: '../../assets/img/desk.jpg'
             },
             surface_right: {
             	surfaceColor: 0xd6e4ec,
-            	imgurl: desk
+            	imgurl: '../../assets/img/desk.jpg'
             },
             surface_up: {
             	surfaceColor: 0xd6e4ec,
-            	imgurl: desk
+            	imgurl: '../../assets/img/desk.jpg'
             },
             surface_fore: {
             	surfaceColor: 0xd6e4ec,
-            	imgurl: desk
+            	imgurl: '../../assets/img/desk.jpg'
             },
             surface_behind: {
             	surfaceColor: 0xd6e4ec,
-            	imgurl: desk
+            	imgurl: '../../assets/img/desk.jpg'
             }
 		}
 	}
@@ -862,23 +860,23 @@ var objects = [{
 		surface: {
 			surface_left: {
             	surfaceColor: 0xd6e4ec,
-            	imgurl: desk
+            	imgurl: '../../assets/img/desk.jpg'
             },
             surface_right: {
             	surfaceColor: 0xd6e4ec,
-            	imgurl: desk
+            	imgurl: '../../assets/img/desk.jpg'
             },
             surface_up: {
             	surfaceColor: 0xd6e4ec,
-            	imgurl: desk
+            	imgurl: '../../assets/img/desk.jpg'
             },
             surface_fore: {
             	surfaceColor: 0xd6e4ec,
-            	imgurl: desk
+            	imgurl: '../../assets/img/desk.jpg'
             },
             surface_behind: {
             	surfaceColor: 0xd6e4ec,
-            	imgurl: desk
+            	imgurl: '../../assets/img/desk.jpg'
             }
 		}
 	}
@@ -1009,11 +1007,11 @@ var objects = [{
 		surface: {
 			surface_right: {
 				surfaceColor: 0x9cb2d1,
-				imgurl: door2
+				imgurl: '../../assets/img/door2.jpg'
 			},
 			surface_left: {
 				surfaceColor: 0x9cb2d1,
-				imgurl: door2
+				imgurl: '../../assets/img/door2.jpg'
 			}
 		}
 	}
@@ -1028,16 +1026,15 @@ var objects = [{
 		surface: {
 			surface_right: {
 				surfaceColor: 0x9cb2d1,
-				imgurl: door2
+				imgurl: '../../assets/img/door2.jpg'
 			},
 			surface_left: {
 				surfaceColor: 0x9cb2d1,
-				imgurl: door2
+				imgurl: '../../assets/img/door2.jpg'
 			}
 		}
 	}
-}, 
-{
+}, {
 	name: 'partition-wallE',
 	type: 'cube',
 	size: [380, 150, 10],
@@ -1133,11 +1130,11 @@ var objects = [{
 		surface: {
 			surface_right: {
 				surfaceColor: 0x9cb2d1,
-				imgurl: door2
+				imgurl: '../../assets/img/door2.jpg'
 			},
 			surface_left: {
 				surfaceColor: 0x9cb2d1,
-				imgurl: door2
+				imgurl: '../../assets/img/door2.jpg'
 			}
 		}
 	}
@@ -1153,15 +1150,15 @@ var objects = [{
 		surface: {
 			surface_right: {
 				surfaceColor: 0x9cb2d1,
-				imgurl: door2
+				imgurl: '../../assets/img/door2.jpg'
 			},
 			surface_left: {
 				surfaceColor: 0x9cb2d1,
-				imgurl: door2
+				imgurl: '../../assets/img/door2.jpg'
 			}
 		}
 	}
-},{
+}, {
 	name: 'partition-wallF',
 	type: 'cube',
 	size: [190, 150, 10],
@@ -1243,7 +1240,7 @@ var objects = [{
 		    },
 	    }
 	}]
-},{
+}, {
 	name: 'master-bedroom-toilet-door',
 	type: 'cube',
 	size: [32, 100, 2],
@@ -1254,15 +1251,13 @@ var objects = [{
 		surface: {
 			surface_right: {
 				surfaceColor: 0x9cb2d1,
-				imgurl: door2
+				imgurl: '../../assets/img/door2.jpg'
 			},
 			surface_left: {
 				surfaceColor: 0x9cb2d1,
-				imgurl: door2
+				imgurl: '../../assets/img/door2.jpg'
 			}
 		}
 	}
-},]
+}]
 
-
-module.exports = objects;

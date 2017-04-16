@@ -1,7 +1,5 @@
 'use strict'
 
-var THREE = require('n3d-threejs');
-
 var renderer;
 function Renderer() {
 
@@ -15,5 +13,3 @@ Renderer.prototype.init = function(canvasFrame, width, height, callback) {
 	renderer.setClearColor(0xFFFFFF, 1.0);
 	callback(renderer);
 }
-
-module.exports = Renderer;

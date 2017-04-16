@@ -1,8 +1,5 @@
 'use strict'
 
-var THREE = require('n3d-threejs')
-var ThreeBSP = require('three-js-csg')(THREE)
-
 function Stuff() {
 
 }
@@ -102,7 +99,7 @@ Stuff.prototype = {
 		cubeMaterialArray.push(new THREE.MeshBasicMaterial(surface_down_obj));
 		cubeMaterialArray.push(new THREE.MeshBasicMaterial(surface_right_obj));
 		cubeMaterialArray.push(new THREE.MeshBasicMaterial(surface_left_obj));
-		var cubeMaterials = new THREE.MeshFaceMaterial(cubeMaterialArray);
+		var cubeMaterials = new THREE.MultiMaterial(cubeMaterialArray);
 		return cubeMaterials;
 
 	},
@@ -186,7 +183,7 @@ Stuff.prototype = {
 		        vertexColors: THREE.FaceColors
 		    }));
 		}
-		var cubeMaterials = new THREE.MeshFaceMaterial(cubeMaterialArray);
+		var cubeMaterials = new THREE.MultiMaterial(cubeMaterialArray);
 		var result = resultBSP.toMesh(cubeMaterials);
 		result.material.shading = THREE.FlatShading;
 		result.geometry.computeFaceNormals();
@@ -237,4 +234,3 @@ Stuff.prototype = {
 	}
 }
 
-module.exports = Stuff;

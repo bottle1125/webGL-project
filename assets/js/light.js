@@ -1,7 +1,5 @@
 'use strict'
 
-var THREE = require('n3d-threejs')
-
 function Light() {
 
 }
@@ -18,5 +16,3 @@ Light.prototype.init = function(scene) {
     light2.castShadow = true;//表示这个光是可以产生阴影的
     scene.add(light2);
 }
-
-module.exports = Light;

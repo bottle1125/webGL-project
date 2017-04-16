@@ -1,6 +1,12 @@
 'use strict'
-var  THREE = require('n3d-threejs')
 
+function ObjectEvent() {
+
+};
+
+ObjectEvent.prototype.haveEvents = function() {
+    return events;
+}
 var events = {
     dbclick: [
         {
@@ -344,6 +350,3 @@ var events = {
     mouseMove: {
     }
 };
-
-
-module.exports = events;
