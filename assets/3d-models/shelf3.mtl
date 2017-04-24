@@ -1,0 +1,19 @@
+# Exported from 3D Builder
+
+newmtl 
+Kd 0.533333 0.000000 0.082353
+
+newmtl 01___Defaultdg
+Kd 0.984300 0.984300 0.984300
+
+newmtl 07___Default
+Kd 0.133300 0.152900 0.164700
+
+newmtl wire_000000000
+Kd 0.000000 0.000000 0.000000
+
+newmtl wire_154185229
+Kd 0.603900 0.725500 0.898000
+
+newmtl wire_229166215
+Kd 0.898000 0.651000 0.843100
