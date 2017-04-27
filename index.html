@@ -11,20 +11,20 @@
 		<p>相机位置</p>
 		<div>
 			<label>x轴：</label>
-			<input type="number" name="" value="0" id="axisX">
+			<input type="number" name="" value="57" id="axisX">
 		</div>
 		<div>
 			<label>y轴：</label>
-			<input type="number" name="" value="900" id="axisY">
+			<input type="number" name="" value="-39" id="axisY">
 		</div>
 		<div>
 			<label>z轴：</label>
-			<input type="number" name="" value="0" id="axisZ">
+			<input type="number" name="" value="-284" id="axisZ">
 		</div>
 		<p>相机视角</p>
 		<div>
 			<label>x轴：</label>
-			<input type="number" name="" value="0" id="perspectiveX">
+			<input type="number" name="" value="143" id="perspectiveX">
 		</div>
 		<div>
 			<label>y轴：</label>
@@ -32,8 +32,19 @@
 		</div>
 		<div>
 			<label>z轴：</label>
-			<input type="number" name="" value="0" id="perspectiveZ">
+			<input type="number" name="" value="500" id="perspectiveZ">
 		</div>
+		<div id="rotation" style="display: none;">
+			<p>旋转</p>
+			<button id="rotationX-add">x轴+</button>
+			<button id="rotationX-plus">x轴-</button>
+			<button id="rotationY-add">y轴+</button>
+			<button id="rotationY-plus">y轴-</button>
+			<button id="rotationZ-add">z轴+</button>
+			<button id="rotationZ-plus">z轴-</button>
+			<div id="recover"><button>恢复<button></div>
+		</div>
+		
 	</div>
 	<script src="./lib/three.js"></script>
 	<script src="./lib/MTLLoader.js"></script>

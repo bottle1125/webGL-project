@@ -26,9 +26,9 @@ CreateMtlObj.prototype.create = function(options, callback) {
 		objLoader.setPath(options.objPath);
 
 		objLoader.load( options.objFileName, function ( object ) {
-			console.log(object)
 			if(object.children) {
 				object.children.forEach(function(child) {
+					child.name = options.name;
 					if(child.material.materials) {
 						child.material.materials.forEach(function(material) {
 							material.side = options.children.material.side || THREE.DoubleSide;
